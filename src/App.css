@@ -1,0 +1,31 @@
+.flex-1 {
+  flex: 1;
+}
+
+.price {
+  padding: 2rem 4rem;
+  box-shadow: 0px 0px 10px -7px black;
+}
+
+.totalprice span{
+  background-color: rgb(30, 16, 46);
+  padding: 3rem 1rem ;
+  color: white;
+  border-radius: .3rem;
+}
+
+.text-truncate{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.btn-search{
+  background-color: rgb(30, 16, 46) ;
+  color: white;
+}
+
+.btn-search:hover{
+  background-color: rgb(30, 16, 46) ;
+  color: white;
+}
