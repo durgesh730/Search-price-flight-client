@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from "react";
 import Data from './Data';
+import { host } from './host';
 
 function App() {
   const [inpval, setInpval] = useState({ origin: '' })
@@ -39,7 +40,7 @@ function App() {
   const autocomplete = async () => {
     try {
       const params = new URLSearchParams({ keyword: inpval.origin });
-      const response = await fetch(`http://localhost:1338/api/autocomplete?${params}`);
+      const response = await fetch(`${host}/api/autocomplete?${params}`);
       const data = await response.json();
       setOrigin(data.data);
     } catch (error) {
@@ -50,7 +51,7 @@ function App() {
   const autocompleteSec = async () => {
     try {
       const params = new URLSearchParams({ keyword: inpvalsec.destination });
-      const response = await fetch(`http://localhost:1338/api/autocomplete?${params}`);
+      const response = await fetch(`${host}/api/autocomplete?${params}`);
       const data = await response.json();
       setDes(data.data);
     } catch (error) {
@@ -81,7 +82,7 @@ function App() {
         travelClass: 'ECONOMY'
 
       });
-      const response = await fetch(`http://localhost:1338/api/search?${params}`);
+      const response = await fetch(`${host}/api/search?${params}`);
       const data = await response.json();
       console.log(data, "price")
       setSeach(data)
@@ -92,10 +93,10 @@ function App() {
 
   return (
     <>
-     
-     <div className='text-center my-4 ' >
+
+      <div className='text-center my-4 ' >
         <h3>Search Price</h3>
-     </div>
+      </div>
 
       <div class="container-sm">
         <div class="my-2 card">
